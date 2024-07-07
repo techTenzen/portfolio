@@ -1,0 +1,135 @@
+.experience-section {
+  padding: 60px 0;
+  background-color: #f9f9f9;
+
+  .main-font {
+    font-size: 32px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+}
+
+.timeline {
+  position: relative;
+  padding: 20px 0;
+  margin-top: 20px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #ddd;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+  }
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 20px 40px;
+  box-sizing: border-box;
+
+  &:nth-child(odd) {
+    left: 0;
+  }
+
+  &:nth-child(even) {
+    left: 50%;
+  }
+
+  .timeline-icon {
+    position: absolute;
+    top: 20px;
+    left: calc(50% - 16px);
+    background-color: #fff;
+    border: 4px solid #ddd;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+
+    i {
+      color: #007bff;
+      font-size: 16px;
+    }
+  }
+
+  .timeline-content {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+
+    &:nth-child(odd)::after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      right: -15px;
+      border-width: 15px 15px 15px 0;
+      border-style: solid;
+      border-color: transparent #fff transparent transparent;
+    }
+
+    &:nth-child(even)::after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: -15px;
+      border-width: 15px 0 15px 15px;
+      border-style: solid;
+      border-color: transparent transparent transparent #fff;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin: 0 0 10px 0;
+    }
+
+    h4 {
+      font-size: 16px;
+      color: #777;
+      margin: 0 0 10px 0;
+    }
+
+    p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .date {
+      font-size: 14px;
+      color: #999;
+      margin-top: 10px;
+      display: block;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 8px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 25px;
+  }
+
+  .timeline-item .timeline-icon {
+    left: 0;
+  }
+
+  .timeline-item .timeline-content::after {
+    left: -15px;
+    border-width: 15px 0 15px 15px;
+    border-color: transparent transparent transparent #fff;
+  }
+}
